@@ -12,8 +12,10 @@
 
 ### Secuencia de rendimiento: 
     - Buscar una esquina. 
-    - Buscar esquina en otro extremo para poder formar una diagonal. 
-    - si el oponente no ocupa el centro, el juego se gana 
+    - Buscar esquina en otro extremo para poder formar una diagonal horizontal. 
+    - Buscar esquina en otro extremo para formar una diagonal vertical  
+    - si el oponente no ocupa el centro horizontal o vertical, es decir,
+    cualquiera de los dos centros (horizontal o vertical), el juego se gana. 
 
 
 
