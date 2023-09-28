@@ -2,7 +2,7 @@
 ## Se necesita una IA capaz de ganar un juego de gato en 3 dimensiones 
 
 ### Medida de persepción: 
-    - Se tenen 3 niveles en 2d del juego gato.
+    -- Se tenen 3 niveles en 2d del juego gato.
     - cada nivel tiene 9 espacios para rellenar.
     - se forma un total de 27 espacios con posibles combinaciones. 
     - Se tienen líneas horizontales que se forman en cada nivel. 
