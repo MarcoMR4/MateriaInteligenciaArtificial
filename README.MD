@@ -95,11 +95,16 @@ Se desea comenzar desde un estado inicial de A, A, A, _, R, R, R a un estado R, 
 - Municipio
 
 
+
+
+
+
 # Actividades Agosto Diciembre 2023
 
 ## Práctica 1. Introducción a la Inteligencia Artificial Actividad 1
 
-### Enayo: Inteligencia Artificial, un enfoque moderno
+
+### Ensayo: Inteligencia Artificial, un enfoque moderno
 
 #### Introducción 
 El presente ensayo abarca el tema de la inteligencia artificial basado en el libro “Inteligencia Artificial, un enfoque moderno”, por Stuart Rusell, este es un campo de la computación y la tecnología muy importante que ha tomado auge en los últimos años, la industria, la globalización y la manera en que la velocidad del trabajo que las personas han necesitado recientemente lleva a necesitar la tecnología como un asistente capaz de ayudar a resolver problemas para la reducción de tiempos y costes de recursos. Este ensayo habla sobre los capítulos 1 y 2 donde se habla de los fundamentos de la inteligencia artificial y el concepto del agente, el cual es el que hace uso de la misma. También se mencionan los capítulos 26 y 27 donde se habla de los fundamentos filosóficos, como es que la inteligencia artificial ha existido desde hace mucho tiempo y como en el futuro esta tendrá crecimiento.
