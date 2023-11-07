@@ -1,6 +1,8 @@
 # Materia: Inteligencia Artificial 
 
 
+# Práctica 8: Reglas y búsquedas
+
 # ********Ejercicio 1: Juego de gato en 3D********
 
 ## Se necesita una IA capaz de ganar un juego de gato en 3 dimensiones
