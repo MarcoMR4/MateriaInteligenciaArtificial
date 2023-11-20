@@ -5,12 +5,12 @@
 
 ### Actividades Agosto Diciembre 2023
 
-- [Práctica 1](practica1.md)
-- [Práctica 2](practica2.md)
-- [Práctica 3](practica3.md)
-- [Práctica 4](practica4.md)
-- [Práctica 5](practica5.md)
+- [Práctica 1](practica1.MD)
+- [Práctica 2](practica2.MD)
+- [Práctica 3](practica3.MD)
+- [Práctica 4](practica4.MD)
+- [Práctica 5](practica5.MD)
 
-- [Práctica 8](practica8.md)
+- [Práctica 8](practica8.MD)
 
 

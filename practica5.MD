@@ -1,4 +1,4 @@
-- [Volver](README.md)
+- [Volver](README.MD)
 
 ## Practica 5 Introducción a la inteligencia artificial Introspección: Elementos de color en una imagen. 
 
