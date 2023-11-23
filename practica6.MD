@@ -61,11 +61,28 @@
     1, x, x, x, 5, x, x, x, 9, x, x, x, 13, x, x, x
     1, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x --pos 1 
 
-    ***En este caso vemos que antes de llegar a 16, la posición vuele a ser 1, el número 15 es un número impar, pero además vemos que cuando el número de posición va a tomar un valor de potencia de 2, se regresa a 1, por lo que podemos deducir que la posición no debe ser par ni tampoco potencia del número 2. ***
+    ***En este caso vemos que antes de llegar a 16, la posición vuele a ser 1, el número 15 es un número impar, pero además vemos que cuando el número de posición va a tomar un valor de potencia de 2, se regresa a 1, por lo que podemos deducir que la posición no debe ser par ni tampoco potencia del número 2.***
 
     **Ejemplo de algoritmo:**
-    
-     
+
+def pot_dos(num):
+    if num > 0 and (num & (num - 1)) == 0:
+        return True
+    else:
+        return False
+
+def posicion(num):
+    if pot_dos(num):
+        return 1
+    else:
+        posicion_josephus = 2 * (num - 2**int(num.bit_length() - 1)) + 1
+        return posicion_josephus
+
+numero = int(input("Ingrese un número: "))
+print(posicion(numero))
+
+
+
 
 
 

@@ -10,6 +10,7 @@
 - [Práctica 3](practica3.MD)
 - [Práctica 4](practica4.MD)
 - [Práctica 5](practica5.MD)
+- [Práctica 6](practica6.MD)
 
 - [Práctica 8](practica8.MD)
 
