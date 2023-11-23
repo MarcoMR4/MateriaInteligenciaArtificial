@@ -1,8 +1,8 @@
-## Prática 6. Introducción a la Inteligencia Artificial: El proceso de razonamiento según la lógica
+## Práctica 6. Introducción a la Inteligencia Artificial: El proceso de razonamiento según la lógica
 
 **Problema de Josephus**
 
-Con respecto al problema de Flavius Josephus podemos comenzar con un análisis de patrones utilizando como referencia un número de prisioneros más pequeños. donde en las suseciones el número de prisionero se convierte en una "x" al ser asesinado.
+***Con respecto al problema de Flavius Josephus podemos comenzar con un análisis de patrones utilizando como referencia un número de prisioneros más pequeño, donde en las sucesiones el número de prisionero se convierte en una "x" al ser asesinado.***
 
 1.  1, 2
     1, x --pos 1
@@ -33,7 +33,7 @@ Con respecto al problema de Flavius Josephus podemos comenzar con un análisis d
     1, x, x, x, 5, x, x, x
     1, x, x, x, x, x, x, x --pos 1 
 
-Para este punto podemos darnos cuenta de que la posicion vuelve a ser 1, otro aspecto a considerar es que números como 2, 4 y 8 se han descartado de las posiciones seguras. 
+***Para este punto podemos darnos cuenta de que la posicion vuelve a ser 1, otro aspecto a considerar es que números como 2, 4 y 8 se han descartado de las posiciones seguras.*** 
 
 8.  1, 2, 3, 4, 5, 6, 7, 8, 9
     1, x, 3, x, 5, x, 7, x, 9
@@ -61,10 +61,12 @@ Para este punto podemos darnos cuenta de que la posicion vuelve a ser 1, otro as
     1, x, x, x, 5, x, x, x, 9, x, x, x, 13, x, x, x
     1, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x --pos 1 
 
-    En este caso vemos que antes de llegar a 16, la posición vuele a ser 1, el número 15 es un número impar, pero además vemos que cuando el número de posición va a tomar un valor de potencia de 2, se regresa a 1, por lo que podemos deducir que la posición no debe ser par ni tampoco potencia del número 2. 
+    ***En este caso vemos que antes de llegar a 16, la posición vuele a ser 1, el número 15 es un número impar, pero además vemos que cuando el número de posición va a tomar un valor de potencia de 2, se regresa a 1, por lo que podemos deducir que la posición no debe ser par ni tampoco potencia del número 2. ***
 
-    Ejemplo de algoritmo: 
-
+    **Ejemplo de algoritmo:**
     
+     
+
+
 
 
