@@ -66,19 +66,29 @@
     **Ejemplo de algoritmo:**
 
 def pot_dos(num):
+
     if num > 0 and (num & (num - 1)) == 0:
+
         return True
+
     else:
+
         return False
 
 def posicion(num):
+
     if pot_dos(num):
+
         return 1
+
     else:
+
         posicion_josephus = 2 * (num - 2**int(num.bit_length() - 1)) + 1
+
         return posicion_josephus
 
 numero = int(input("Ingrese un número: "))
+
 print(posicion(numero))
 
 
