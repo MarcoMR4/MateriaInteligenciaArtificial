@@ -15,6 +15,8 @@ Para tener una referencia más clara y limitar los colores podríamos utilizar l
 Los colores que normalmente hemos manejado en estos rangos son los RGB que son los tres colores primarios que forman a los demás, aunque solo es un formato de muchos que se manejan para el color digital. 
 El primer paso sería poder procesar la imagen para convertirla en una matriz, esto utilizando una librería que permita el manejo de imágenes y colores como el caso de open cv del lenguaje Python, luego definir los colores. Además se debería definir un contador para guardar el número de elementos, objetos o islas encontrados con la característica que se solicita. 
 Ejemplo de algoritmo 
+
+```python
 r1 = 100, g1 = 0, b1 = 0
 r2 = 255, g2 = 100, b2 = 100
 islas = 0
@@ -54,6 +56,7 @@ cv.imshow('Original',mapa)
 print('islas:',islas)
 cv.waitKey(0)
 cv.destroyAllWindows()
+```
 
 ### Conclusión 
 El ejemplo tratado es muy similar al anterior, donde solo se contaban islas, de hecho, entre más pequeños son los pixeles, más curveadas pueden apreciarse esas islas, pero viéndolos desde la perspectiva de una matriz, sabemos que también son cuadradas como el caso de una matriz que es más pequeña. 
