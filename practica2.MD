@@ -1,4 +1,4 @@
-- [Volver](README.MD)
+🔙 [Volver](README.MD)
 
 ## Práctica 2: Ensayo. Introducción a la Inteligencia Artificial: Tipos de Inteligencia.
 ### **Teoría de las Inteligencias Múltiples de Gardner 

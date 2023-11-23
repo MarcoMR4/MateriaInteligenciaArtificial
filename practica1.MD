@@ -1,4 +1,4 @@
-- [Volver](README.MD)
+🔙 [Volver](README.MD)
 
 ## Práctica 1. Introducción a la Inteligencia Artificial Actividad 1
 
