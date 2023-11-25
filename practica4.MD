@@ -16,39 +16,127 @@ En la parte iterativa se utilizaría una función que pueda recorrer la matriz e
 Teniendo como referencia el tamaño de la matriz, esto me hace asociarlo con un ciclo iterativo como por ejemplo el ciclo for, en el que podríamos recorrer fila y las columnas en otro for anidado. Sin embargo, para poder contar las islas que se tendrían en la matriz, debería de haber varios elementos con valor 1 conectados de forma vertical u horizontal, en cualquiera de las dos formas. Si en un dado caso se encuentra un valor de 1, se debería activar una variable que indique que se están contando los elementos dentro de una isla por lo que se debería de guardar la referencia de las columnas en las que se encuentran los elementos  1 en dicha fila y luego continuar en la siguiente fila en el momento que se dejen de encontrar elementos 1, lo que se me ocurre es que después se recorre la siguiente fila específicamente en las columnas referenciadas para así ver si también hay elementos con valor 1. Aunque si hay otros elementos consecutivos en la misma fila, entonces estos también formarían parte de la isla, este proceso se haría hasta llegar a un momento en el que ya no haya elementos 1 consecutivos y se contaría como una isla. Después se repetiría el proceso principal para encontrar más islas. 
 
 #### Ejemplo iterativo: 
-def contarElementosIterativo(matriz, fila, columna, color):
-	if matriz[fila][columna] != color:
-        		return 0
-	contador = 0
-	referencia = [(fila, columna)]
- 	while referencia:
-      		  f, c = referencia.pop()
-if 0 <= f < len(matriz) and 0 <= c < len(matriz[0]) and matriz[f][c] == color:
-            contador += 1
-            matriz[f][c] = None  
-            stack.append((f + 1, c))
-            stack.append((f - 1, c))
-            stack.append((f, c + 1))
-            stack.append((f, c - 1))
-    return contador
+
+```python
+
+matriz = [
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0],
+[0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+[0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0],
+[0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0],
+[0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0],
+[0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+[0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+]
+
+filas = len(matriz)
+columnas = len(matriz[0])
+
+
+def explorar_isla(matriz, h, w):
+    if 0 <= h < filas and 0 <= w < columnas and matriz[h][w] == 1:
+        matriz[h][w] = 0 
+        explorar_isla(matriz, h + 1, w)
+        explorar_isla(matriz, h - 1, w)
+        explorar_isla(matriz, h, w + 1)
+        explorar_isla(matriz, h, w - 1)
+
+
+islas_contadas = 0
+
+for h in range(filas):
+    for w in range(columnas):
+        if matriz[h][w] == 1:
+            islas_contadas += 1
+            explorar_isla(matriz, h, w)
+
+print(f"El número de islas es: {islas_contadas}")
+
+
+```
+
 Donde el color a contar sería 1.
 
 #### Método recursivo. 
 Para una forma recursiva el método sería similar en su declaración pero tendría que mandarse a llamar dentro pero indicando las diferentes direcciones en las que podría moverse la posición en la que estemos, tomando en cuenta claro, que si estamos en la posición 0, no podemos ir a un número negativo y el límite sería ya sea el ancho o el alto de la matriz, además si devolvemos un valor de 1 cuando vamos encontrando una isla cuando se sume el contador podemos usar como referencia la recursividad del método utilizado. 
 
 #### Ejemplo recursivo: 
+
+```python
+
 def contarElementosRecursivo(matriz, fila, columna, color):
-if not (0 <= fila < len(matriz)) or not (0 <= columna < len(matriz[0])) or matriz[fila][columna] != color:
-        		return 0
-	contador = 1
-	matriz[fila][columna] = None
-contador += contarElementosRecursivo (matriz, fila + 1, columna, color)
-    	contador += contarElementosRecursivo (matriz, fila - 1, columna, color)
-    	contador += contarElementosRecursivo (matriz, fila, columna + 1, color)
-    	contador += contarElementosRecursivo (matriz, fila, columna - 1, color)
+    if not (0 <= fila < len(matriz)) or not (0 <= columna < len(matriz[0])) or matriz[fila][columna] != color:
+        return 0
+
+    contador = 1
+    matriz[fila][columna] = None
+
+    # Llamadas recursivas en todas las direcciones
+    contador += contarElementosRecursivo(matriz, fila + 1, columna, color)
+    contador += contarElementosRecursivo(matriz, fila - 1, columna, color)
+    contador += contarElementosRecursivo(matriz, fila, columna + 1, color)
+    contador += contarElementosRecursivo(matriz, fila, columna - 1, color)
+
+    return contador
+
+def contarIslas(matriz):
+    islas_contadas = 0
+
+    for h in range(len(matriz)):
+        for w in range(len(matriz[0])):
+            if matriz[h][w] == 1:
+                islas_contadas += 1
+                contarElementosRecursivo(matriz, h, w, 1)
+
+    return islas_contadas
+
+matriz = [
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0],
+    [0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+    [0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0],
+    [0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0],
+    [0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0],
+    [0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+    [0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+]
+
+print(f"El número de islas es: {contarIslas(matriz)}")
+
+```
 
 ### Conclusión 
 En conclusión, vemos que el método recursivo parece ser más óptimo que el iterativo, aunque pueden adaptarse características del otro según se necesite, en este caso creo que incluso solo con aplicar el segundo es suficiente, sobre todo por la naturaleza del problema, en donde la conexión de los elementos que conforman una isla puede ser tanto de forma horizontal como vertical. 
+
 Lo que pude observar en este ejercicio, es que yo tenía asociado los métodos que vimos en las primeras clases con los ejercicios que estábamos resolviendo para encontrar islas también, creo que, entrando en contexto con la inteligencia artificial, estas características también podrían ser aprendidas y aprovechadas para resolver el problema. 
 
 
