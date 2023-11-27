@@ -11,7 +11,7 @@
 4. 🗈 [Práctica 4](practica4.MD)
 5. 🗈 [Práctica 5](practica5.MD)
 6. 🗈 [Práctica 6](practica6.MD)
-
+6. 🗈 [Práctica 7](practica7.MD)
 8. 🗈 [Práctica 8](practica8.MD)
 
 

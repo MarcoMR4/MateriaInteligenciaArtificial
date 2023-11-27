@@ -29,11 +29,13 @@
 **Medida de percepción:**
 Pollo: P, Coyote: C, Lechuga: L, Granjero: G.
 
-- Lado1: C, P, L, G    Lado2:
-- Lado1: L, P, G        Lado2: C
-- Lado1: P, G           Lado2: C, L
-- Lado1: P              Lado2: G, C, L
-- Lado1:                Lado2: G, C, P, L
+| Lado1           | Lado2           |
+| --------------- | --------------- |
+| C, P, L, G      |                 |
+| L, P, G         | C               |
+| P, G            | C, L            |
+| P               | G, C, L         |
+|                 | G, C, P, L      |
 
 **Secuencia de rendimiento:**
 Se tiene 1 pollo, 1 lechuga y 1 coyote. Hay dos islas de tierra y en medio se tiene un río que se necesita cruzar. La idea es llevar a los 3 de un lado de un río al otro sin que se coman entre ellos. El pollo se come a la lechuga, el coyote se come al pollo. Solo caben 2 elementos en el bote.
@@ -43,15 +45,20 @@ Se tiene 1 pollo, 1 lechuga y 1 coyote. Hay dos islas de tierra y en medio se ti
 **Medida de percepción:**
 Monje: M, Caníbal: C
 
-- Lado1: M, M, M, C, C, C    Lado2:
-- Lado1: M, M, M, C, C       Lado2: C
-- Lado1: M, M, M, C         Lado2: C, C
-- Lado1: M, M, M            Lado2: C, C, C
-- Lado1: M, M, M, C         Lado2: C, C
-- Lado1: M, C                Lado2: M, M, C, C
-- Lado1: C                  Lado2: M, M, M, C, C
-- Lado1: M, C                Lado2: M, M, C, C
-- Lado1:                    Lado2: M, M, M, C, C, C
+| Lado1                | Lado2                |
+|----------------------|----------------------|
+| M, M, M, C, C, C     |                      |
+| M, M, M, C, C        | C, C                 |
+| M, M, M             | C, C, C              |
+| M, M, M, C          | C, C                 |
+| M, M                | C, C, M, M           |
+| C, M                | M, M, C, C           |
+| C, C                | M, M, M, C, M        |
+| M, C                | M, M, C, C           |
+| C                   | M, M, C, C, M        |
+|                      | M, M, M, C, C, C     |
+
+
 
 **Secuencia de rendimiento:**
 Como en el caso anterior, se desea transportar a 3 monjes y 3 caníbales de un lado del río al otro. El caníbal se puede comer al monje. Si hay más caníbales que monjes, se los pueden comer, en el caso contrario, no. En el bote solo caben 2 individuos y uno debe regresar, mientras que el otro se queda en el lado 2. La idea es transportar a todos de un lado a otro sin que los caníbales se coman a los monjes.
@@ -72,12 +79,33 @@ Se desea comenzar desde un estado inicial de A, A, A, _, R, R, R a un estado R, 
 
 ### Espacio de estados
 
-- A A A _ R R R
-- A A _ A R R R
+| Paso | Estado              |
+|------|---------------------|
+| 1    | A A A _ R R R       |
+| 2    | A A _ A R R R       |
+| 3    | A A R A _ R R       |
+| 4    | A A R _ A R R       |
+| 5    | A A R R A _ R       |
+| 6    | A A R R A R _       |
+| 7    | A A R R _ R A       |
+| 8    | A A _ R R R A       |
+| 9    | A _ A R R R A       |
+| 10   | A R A _ R R A       |
+| 11   | A R _ A R R A       |
+| 12   | _ R A A R R A       |
+| 13   | R _ A A R R A       |
+| 14   | R A _ A R R A       |
+| 15   | R A R A _ R A       |
+| 16   | R A R _ A R A       |
+| 17   | R A R R A _ A       |
+| 18   | R A R R _ A A       |
+| 19   | R A R R A A _       |
+| 20   | R R R A A A _       |
 
 
 
-## ******** Obtener las variables de las personas que votan en las elecciones ********
+
+***Obtener las variables de las personas que votan en las elecciones.***
 
 ### Secuencias de percepción:
 - Personas en un país en el que se va a elegir un presidente.
@@ -86,7 +114,7 @@ Se desea comenzar desde un estado inicial de A, A, A, _, R, R, R a un estado R, 
 
 ### Medida de rendimiento:
 
-**Realizar encuestas que soliciten datos:**
+**Realizar encuestas con las que se obtengan los datos:**
 - Edad
 - Género
 - Candidato preferido
